@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/*
+non so se hai mai usato i root ma sono praticmante dei nominativi per  dei colori base quindi quando ce scritto color --cream si riferisci a quetsi codici colori qua sottod
+*/
+:root {
+      --cream: #f5f0e8;
+      --dark-green: #2d4a2d;
+      --orange: #e8621a;
+      --text: #1a1a1a;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    background-color: #fefae0;
+}
+
+.header {
+    background-color: aquamarine;
+    height: 600px;
+    padding-top: 30px;
+}
+
+nav {
+      width: 90%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 58px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-radius: 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+}
+
+.nav-logo {
+    width: 114px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+}
+
+.nav-links li a {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: var(--dark-green);
+      border: 1.5px solid rgba(0,0,0,0.10);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: background 0.2s, border-color 0.2s, 0.5s ease-in-out;
+      white-space: nowrap;
+}
+
+.nav-links li a:hover {
+      transform: translateY(-5px);
+      transition: 0.5s ease-in-out;
+}
+
+
+.nav-links li.cta a {
+      background: var(--cream);
+      color: var(--dark-green);
+      border: 3px solid;
+      border-color: var(--dark-green);
+      padding: 7px 20px;
+}
+
+.nav-links li.cta a:hover {
+        color: var(--cream);
+      background: #3a5e3a;
+      border-color: #3a5e3a;
+}
