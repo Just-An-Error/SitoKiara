@@ -18,24 +18,33 @@ body {
 }
 
 .header {
-    background-color: aquamarine;
+    background-image: url(immagini/banner.jpg);
+    background-position: center;
+    background-size: cover;
     height: 600px;
     padding-top: 30px;
 }
 
 nav {
-      width: 90%;
-      background: var(--cream);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 32px;
-      height: 58px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      border-radius: 50px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 58px;
+    border-radius: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+
+    background: rgba(255, 255, 255, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, border 0.3s ease;
 }
 
 .nav-logo {
@@ -55,29 +64,30 @@ nav {
 }
 
 .nav-links li a {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 16px;
-      border-radius: 999px;
-      background: var(--dark-green);
-      border: 1.5px solid rgba(0,0,0,0.10);
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      transition: background 0.2s, border-color 0.2s, 0.5s ease-in-out;
-      white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border-radius: 999px;
+
+    background: var(--dark-green);
+    border: 3px solid;
+    border-color: var(--dark-green);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 0.3s, transform 0.3s;
+    backdrop-filter: blur(5px);
 }
 
 .nav-links li a:hover {
-      transform: translateY(-5px);
-      transition: 0.5s ease-in-out;
+    transform: translateY(-3px);
 }
 
 
 .nav-links li.cta a {
-      background: var(--cream);
+      background: none;
       color: var(--dark-green);
       border: 3px solid;
       border-color: var(--dark-green);
