@@ -99,3 +99,51 @@ nav {
       background: #3a5e3a;
       border-color: #3a5e3a;
 }
+
+.div-pillole {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.pill-row {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.pill-track {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.pill {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--dark-green);
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.row-left .pill-track {
+    animation: scroll-left 18s linear infinite;
+}
+
+.row-right .pill-track {
+    animation: scroll-right 18s linear infinite;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(50%); }
+    to { transform: translateX(-80%); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(-80%); }
+    to { transform: translateX(50%); }
+}
