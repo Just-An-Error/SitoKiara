@@ -5,46 +5,93 @@
 non so se hai mai usato i root ma sono praticmante dei nominativi per  dei colori base quindi quando ce scritto color --cream si riferisci a quetsi codici colori qua sottod
 */
 :root {
-      --cream: #f5f0e8;
+      --cream: #fefae0;
       --dark-green: #2d4a2d;
       --orange: #e8621a;
       --text: #1a1a1a;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     font-family: "Josefin Sans", sans-serif;
     margin: 0;
     background-color: #fefae0;
+    max-width: 100vw;
+
 }
 
 .header {
     background-image: url(immagini/banner.jpg);
     background-position: center;
     background-size: cover;
-    height: 600px;
-    padding-top: 30px;
+    min-height: 700px;
+    padding-top: 200px;
+    position: relative;
+}
+
+.header .container {
+    width: 80%;               /* larghezza centrale */
+    max-width: 1200px;
+    margin: 0 auto;           /* centra il container orizzontalmente */
+    display: flex;
+    flex-direction: column;   /* nav sopra, hero-content sotto */
+    align-items: flex-start;  /* contenuto allineato a sinistra dentro il container */
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.h1-header {
+    font-size: 80px;
+    color: var(--cream);
+}
+
+
+.hero-cta {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: var(--dark-green);
+    border: 2px solid var(--cream);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 nav {
-    margin: 0 auto;
     width: 80%;
+    height: 58px;
+    padding: 0 32px;
+    border-radius: 50px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    height: 58px;
-    border-radius: 50px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 
     background: rgba(255, 255, 255, 0.15); 
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease, border 0.3s ease;
 }
 
 .nav-logo {
@@ -113,6 +160,7 @@ nav {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    max-width: 100vw;
 }
 
 .pill-track {
@@ -131,19 +179,204 @@ nav {
 }
 
 .row-left .pill-track {
-    animation: scroll-left 18s linear infinite;
+    animation: scroll-left 15s linear infinite;
 }
 
 .row-right .pill-track {
-    animation: scroll-right 18s linear infinite;
+    animation: scroll-right 15s linear infinite;
 }
 
 @keyframes scroll-left {
-    from { transform: translateX(50%); }
-    to { transform: translateX(-80%); }
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 @keyframes scroll-right {
-    from { transform: translateX(-80%); }
-    to { transform: translateX(50%); }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.separatore {
+    width: 50px;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 7px 36px;
+    border-radius: 999px;
+    background: var(--cream);
+    border: 3px solid;
+    border-color: var(--dark-green);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: background 0.3s, transform 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.separatore a {
+    color: var(--dark-green);
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+.separatore:hover {
+    transform: scale(1.1);
+}
+
+/* dio merda queste cose non vanno ORE_BUTTATE = 3*/
+.chobani-section {
+    position: relative;  
+    margin: 0 auto;
+    width: 80%;
+    padding: 0px 5%;
+    background: var(--cream);
+    text-align: center;
+    overflow: visible;
+    z-index: 1;
+}
+
+.chobani-section h2 {
+    font-size: 42px;
+    margin-bottom: 60px;
+    position: relative;
+
+}
+
+
+
+.parent {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    z-index: 3;
+}
+    
+.div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    height: 200px; /*Questa altezza comanda l altezza della tabella*/
+    border-radius: 20px;
+    background-color: #F1BBAC;
+}
+
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    border-radius: 20px;
+    background-color: #FF4814;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 5;
+    background-image: url(immagini/diobastardo.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+    background-image: url(immagini/madonnarosa.jpg);
+    background-position: top;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    background-image: url(immagini/diocalorifero+.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 5;
+    border-radius: 20px;
+    background-color: #6C702F;
+}
+
+.div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 5;
+    background-image: url(immagini/diosabbia.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.text-card {
+    font-size: 20px;
+    display: flex;
+    color: var(--cream);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* NON TOCCARE STI CAZZO DI ANGOLI SOLO IO E DIO SAPPIAMO COME FUNZIONAO PORCO DIO TALEBANO CODICE*/
+.corner {
+    position: absolute; 
+    height: auto;
+}
+
+.top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    transform: translate(-190px, -120px);
+    z-index: 12;
+}
+
+.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    transform: translate(150px, -150px);
+    z-index: 1;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    transform: translate(-150px, 240px);
+    z-index: 1;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    transform: translate(100px, 240px);
+    z-index: 1;
+}
+
+.parent {
+    position: relative;  
+    z-index: 10;        
 }
